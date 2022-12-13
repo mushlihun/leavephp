@@ -18,19 +18,6 @@
 <body>
 <?php
 require 'connect-db.php';
-$password = 'rasmuslerdorf';
-$que1=mysqli_query($con,"select password from faculty where email='user@mes.ac.in'");
-$row = '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq';
-//mysqli_fetch_array($que1);
-//echo $row['password'];
-echo ("==password==");
-echo $password;
-if(password_verify($password, $row))
-{
-	echo ("true");
-} else {
-	echo ("false");
-}
 ?>
 <!--Header-->
 <div class="container-fluid">
@@ -61,8 +48,8 @@ if(password_verify($password, $row))
 <br>
 <center style="padding-bottom: 10px; ">
 
-<input type="radio" name="gender" value="male" class="radioN" required>&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="gender" value="female" class="radioN">&nbsp;Female
+<input type="radio" name="gender" value="male" required>&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="female">&nbsp;Female
 </center>
 <select name="branch">
 <option name="AUTO">AUTO</option>
@@ -75,7 +62,7 @@ if(password_verify($password, $row))
 <br>
 <br>	
 <input type="email" name="email" placeholder="Enter your email" onkeyup="checkMail()" id="email" required>
-<p id="emailv">Email does not belong to MES domain.</p>
+<p id="emailv">Email does not match.</p>
 <br>
 <br>
 <input type="password" name="password" placeholder="Enter your password" onkeyup="checkPass()" id="pass" required>

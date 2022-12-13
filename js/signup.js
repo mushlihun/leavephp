@@ -1,7 +1,9 @@
 function checkMail()
 {
 	var value = email.value;
-	if(value.endsWith("@mes.ac.in"))
+	// if(value.endsWith("@mes.ac.in"))
+	var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	if (value.match(validRegex))
 	{
 		document.getElementById('emailv').style.display = "none";
 		email.style.borderBottomColor = "green";
@@ -21,7 +23,7 @@ function checkName()
 		document.getElementById('namev').style.display = "none";
 		fname.style.borderBottomColor = "green";
 	} 
-	else
+	elsedas
 	{
 		document.getElementById('namev').style.display = "block";
 		fname.style.borderBottomColor = "red";
@@ -84,20 +86,4 @@ function validate()
 		window.location.href="index.php";
 		alert("Account created successfully.")
 	}
-}
-
-function password_verify($password, $hash)
-{
-	if (strlen($hash) !== 60 OR strlen($password = crypt($password, $hash)) !== 60)
-	{
-		return FALSE;
-	}
-
-	$compare = 0;
-	for ($i = 0; $i < 60; $i++)
-	{
-		$compare |= (ord($password[$i]) ^ ord($hash[$i]));
-	}
-
-	return ($compare === 0);
 }

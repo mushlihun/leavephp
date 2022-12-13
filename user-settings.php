@@ -2,12 +2,6 @@
 session_start();
 if(isset($_SESSION['user']))
 {
-	require 'connect-db.php';
-	$row = mysqli_query($con,"select casual_rem, sick_rem from faculty where email='".$_SESSION['user']."'");
-	$row1 = mysqli_fetch_row($row);
-	$casual = $row1[0];
-	$sick = $row1[1];
-
 ?>
 <html>
 <head>

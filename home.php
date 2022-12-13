@@ -46,11 +46,6 @@ if(isset($_SESSION['user']))
 Casual Leaves left: <?php echo $row1[0]; ?>
 <br>
 Sick Leaves left: <?php echo $row1[1]; ?>
-<br>
-Password: <?php 
-$pass = mysqli_query($con,"select pass from faculty where email='".$_SESSION['user']."'");
-$pass1 = mysqli_fetch_row($pass);
-echo$pass1['0'];?>
 </center>
 </div>	
 </div>
